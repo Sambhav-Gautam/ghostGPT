@@ -2,7 +2,7 @@
   "name": "ghostgpt",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Sambhav-Gautam.github.io/ghostgpt",
+  "homepage": "https://Sambhav-Gautam.github.io/ghostGPT",
   "dependencies": {
     "@shadcn/ui": "^0.0.4",
     "@testing-library/dom": "^10.4.0",
