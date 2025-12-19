@@ -1,0 +1,53 @@
+/* FogContainer.css */
+.fog-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.fog-layer {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: transparent;
+    background-image: radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.8), transparent 60%);
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: drift 20s infinite ease-in-out alternate;
+}
+
+.fog-layer:nth-child(2) {
+    top: -30%;
+    left: -30%;
+    background-image: radial-gradient(circle at 40% 60%, rgba(40, 0, 0, 0.3), transparent 50%);
+    animation-duration: 25s;
+    animation-direction: alternate-reverse;
+}
+
+.fog-layer:nth-child(3) {
+    top: -60%;
+    left: 10%;
+    background-image: radial-gradient(circle at 70% 30%, rgba(0, 30, 0, 0.3), transparent 50%);
+    animation-duration: 30s;
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(10%, 5%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-5%, 10%) scale(1);
+    }
+}

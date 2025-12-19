@@ -1,0 +1,55 @@
+.welcome-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20000;
+    /* Ensure it's above everything */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: var(--terminal-green, #0aff0a);
+}
+
+.summon-btn {
+    background: transparent;
+    border: 2px solid var(--terminal-green, #0aff0a);
+    color: var(--terminal-green, #0aff0a);
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    font-family: var(--font-horror, 'Courier New');
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(10, 255, 10, 0.2);
+}
+
+.summon-btn:hover {
+    transform: scale(1.1);
+    color: #ff0000;
+    border-color: #ff0000;
+    text-shadow: 0 0 20px #ff0000;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+.entering-text {
+    font-size: 1.5rem;
+    font-family: var(--font-terminal, monospace);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
