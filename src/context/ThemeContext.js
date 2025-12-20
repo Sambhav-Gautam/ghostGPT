@@ -19,6 +19,8 @@ export const ThemeProvider = ({ children }) => {
         setEffectiveTheme(newTheme);
     }, [manualThemeOverride, isHauntingFromHook]);
 
+    const [isRedRoom, setIsRedRoom] = useState(false);
+
     // Apply the effective theme to the document body
     useEffect(() => {
         if (effectiveTheme === 'haunted') {
@@ -27,6 +29,15 @@ export const ThemeProvider = ({ children }) => {
             document.body.removeAttribute('data-theme');
         }
     }, [effectiveTheme]);
+
+    // Apply Red Room effect
+    useEffect(() => {
+        if (isRedRoom) {
+            document.body.classList.add('red-room-active');
+        } else {
+            document.body.classList.remove('red-room-active');
+        }
+    }, [isRedRoom]);
 
     const toggleHaunting = () => {
         // If there's a manual override, toggle it.
@@ -42,12 +53,18 @@ export const ThemeProvider = ({ children }) => {
         });
     };
 
+    const triggerRedRoom = (duration = 3000) => {
+        setIsRedRoom(true);
+        setTimeout(() => setIsRedRoom(false), duration);
+    };
+
     const value = {
         theme: effectiveTheme,
         isHaunting: effectiveTheme === 'haunted', // Expose the effective haunting state
         toggleHaunting,
         isManualOverrideActive: manualThemeOverride !== null,
         manualThemeOverride,
+        triggerRedRoom
     };
 
     return (
