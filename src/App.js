@@ -24,6 +24,7 @@ const GhostChat = () => {
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
     const heartbeatRef = useRef(1.0);
+    const userMessageCountRef = useRef(0); // Track user message count for early scares
 
     const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
 
@@ -49,10 +50,16 @@ const GhostChat = () => {
 
         audioManager.playStatic();
 
+        // Increment user message count
+        userMessageCountRef.current += 1;
+
         // IMMEDIATE SCARINESS
-        // Trigger if input contains specific keywords OR random chance
+        // ALWAYS trigger on 1st or 2nd message, OR keywords, OR random chance
         const lowerInput = input.toLowerCase();
-        if (Math.random() < 0.25 ||
+        const isEarlyMessage = userMessageCountRef.current <= 2;
+
+        if (isEarlyMessage ||
+            Math.random() < 0.25 ||
             lowerInput.includes("scare") ||
             lowerInput.includes("ghost") ||
             lowerInput.includes("help") ||
