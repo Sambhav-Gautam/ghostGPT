@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ghostGPT/static/css/main.fc861a4a.css",
+    "main.js": "/ghostGPT/static/js/main.571cb0cc.js",
+    "static/js/453.4d797da9.chunk.js": "/ghostGPT/static/js/453.4d797da9.chunk.js",
+    "index.html": "/ghostGPT/index.html",
+    "main.fc861a4a.css.map": "/ghostGPT/static/css/main.fc861a4a.css.map",
+    "main.571cb0cc.js.map": "/ghostGPT/static/js/main.571cb0cc.js.map",
+    "453.4d797da9.chunk.js.map": "/ghostGPT/static/js/453.4d797da9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc861a4a.css",
+    "static/js/main.571cb0cc.js"
+  ]
+}
